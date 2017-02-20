@@ -1,0 +1,146 @@
+title Bowling Green Massacre
+author Christian  F. Walter
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background
+Lightgreen
+
+Wall
+Green
+
+Player
+Black Orange White Blue
+.000.
+.111.
+22222
+.333.
+.3.3.
+
+Ball
+Black Darkgray
+.000.
+01010
+00100
+00000
+.000.
+
+OnePin 1
+White Red
+..0..
+..1..
+..0..
+..0..
+..0..
+
+TwoPin 2
+White Red
+.0.0.
+.1.1.
+.0.0.
+.0.0.
+.0.0.
+
+ThreePin 3
+White Red
+0.0.0
+1.1.1
+0.0.0
+0.0.0
+0.0.0
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+* = Ball
+
+=======
+SOUNDS
+=======
+
+Ball MOVE 36772507
+OnePin MOVE 11695907
+TwoPin MOVE 11695907
+ThreePin MOVE 11695907
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Player, Wall, Ball, OnePin, TwoPin, ThreePin
+
+======
+RULES
+======
+
+[ >  Player | Ball ] -> [ > Player | > Ball  ]
+[ >  Player | OnePin ] -> [ > Player | > OnePin  ]
+[ >  Player | TwoPin ] -> [ > Player | > TwoPin  ]
+
+[ >  OnePin | OnePin ] -> [ > TwoPin |  ]
+[ >  OnePin | TwoPin ] -> [ > ThreePin |  ]
+[ >  TwoPin | OnePin ] -> [ > ThreePin |  ]
+[ >  Ball | ThreePin ] -> [ > Ball |  ]
+
+==============
+WINCONDITIONS
+==============
+
+No OnePin
+No TwoPin
+No ThreePin
+
+=======
+LEVELS
+=======
+
+
+###############
+#.............#
+#P*.........3.#
+#.............#
+###############
+
+###############
+#.............#
+#P*........12.#
+#.............#
+###############
+
+###############
+#..........#1##
+#...........1.#
+#.............#
+#.............#
+#P*........1..#
+#.............#
+###############
+
+###############
+#.............#
+#.....######..#
+#......111....#
+#.....######..#
+#......111....#
+#.*...######..#
+#p............#
+###############
+
+
+###############
+#.............#
+#............1#
+#..........111#
+#.........1111#
+#..........111#
+#.*..........1#
+#p............#
+###############
